@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu+Sans+Mono:ital,wght@0,400..700;1,400..700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Ubuntu Sans Mono", monospace;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  color: #fff;
+}
+.heading {
+  background: rgb(29, 50, 98);
+  background: linear-gradient(
+    90deg,
+    rgba(29, 50, 98, 1) 18%,
+    rgba(35, 72, 231, 1) 98%
+  );
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 1rem;
+}
+
+.weather-container {
+  background: rgb(29, 50, 98);
+  background: linear-gradient(
+    90deg,
+    rgba(29, 50, 98, 1) 18%,
+    rgba(35, 72, 231, 1) 98%
+  );
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  width: 350px;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.search input[type="text"] {
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  padding: 10px;
+  width: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search button {
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  margin-left: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search button img {
+  width: 20px;
+}
+
+.weather-container img {
+  width: 100px;
+  margin: 20px 0;
+}
+
+.weather-container p {
+  font-size: 44px;
+  margin: 10px 0;
+}
+
+.weather-detail {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.weather-detail div {
+  display: flex;
+  align-items: center;
+}
+
+.weather-detail img {
+  width: 30px;
+  margin-right: 10px;
+}
+
+.weather-detail p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.humidity-text,
+.wind-text {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+}
+
+.humidity-text p,
+.wind-text p {
+  margin: 2px 0;
+}
