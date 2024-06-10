@@ -117,3 +117,7 @@ body {
 .wind-text p {
   margin: 2px 0;
 }
+
+.main {
+  display: none;
+}
