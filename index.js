@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const weatherContainer = document.querySelector(".weather-container");
   const temperatureElement = weatherContainer.querySelector("p:nth-of-type(1)");
   const cityElement = weatherContainer.querySelector("p:nth-of-type(2)");
+  const weatherImg = document.getElementById("weather-img");
   const humidityElement = weatherContainer.querySelector(
     ".humidity-text p:nth-of-type(1)"
   );
@@ -14,9 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   async function getWeatherData(city) {
     try {
-      const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
       const response = await fetch(apiUrl);
       const data = await response.json();
+      console.log(data);
 
       if (response.ok) {
         document.querySelector(".main").style.display = "block";
@@ -29,7 +31,21 @@ document.addEventListener("DOMContentLoaded", () => {
         temperatureElement.textContent = `${temperature}°C`;
         cityElement.textContent = cityName;
         humidityElement.textContent = `${humidity}%`;
-        windElement.textContent = `${windSpeed} km/hr`;
+        windElement.textContent = `${windSpeed} km/h`;
+
+        if (data.weather[0].main === "Clouds") {
+          weatherImg.src = "images/clouds.png";
+        } else if (data.weather[0].main === "Rain") {
+          weatherImg.src = "images/rain.png";
+        } else if (data.weather[0].main === "Drizzle") {
+          weatherImg.src = "images/drizzle.png";
+        } else if (data.weather[0].main === "Snow") {
+          weatherImg.src = "images/snow.png";
+        } else if (data.weather[0].main === "Clear") {
+          weatherImg.src = "images/clear.png";
+        } else if (data.weather[0].main === "Mist") {
+          weatherImg.src = "images/mist.png";
+        }
       } else {
         alert(`Error: ${data.message}`);
       }
@@ -40,10 +56,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   searchButton.addEventListener("click", () => {
     const city = searchInput.value.trim();
+
     if (city) {
       getWeatherData(city);
     } else {
       alert("Please enter a city name.");
     }
+    searchInput.value = "";
   });
 });
