@@ -122,3 +122,11 @@ body {
 .main {
   display: none;
 }
+
+.copy {
+  position: absolute;
+  bottom: 0;
+  color: #888b8f;
+  padding: 8px;
+  font-size: 18px;
+}

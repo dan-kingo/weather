@@ -65,3 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     searchInput.value = "";
   });
 });
+
+let year = new Date().getFullYear();
+
+document.getElementById("year").innerText = year;
